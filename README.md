@@ -90,7 +90,7 @@ oc create -f openshift/mysql_serviceinstance.yml
 4. Create a new app on the cloud platform
 
 ```bash
-oc new-app -f openshift/spring-boot-db-notes_template.yml
+oc new-app -f openshift/cloud-native-demo_backend_template.yml
 ```
 
 5. Start the build using project's source
