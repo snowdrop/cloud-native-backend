@@ -123,7 +123,7 @@ objects:
       sourceStrategy:
         env:
         - name: ARTIFACT_COPY_ARGS
-          value: '*.jar'
+          value: ${ARTIFACT_COPY_ARGS}
         from:
           kind: ImageStreamTag
           name: runtime:latest
