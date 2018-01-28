@@ -1,8 +1,10 @@
 package me.snowdrop.controller;
 
+import io.opentracing.Tracer;
 import me.snowdrop.model.Note;
 import me.snowdrop.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +21,13 @@ public class NoteController {
     @Autowired
     NoteRepository noteRepository;
 
+    @Autowired
+    @Qualifier("app-tracer")
+    private Tracer tracer;
+
     @GetMapping("/notes")
     public List<Note> getAllNotes() {
+        tracer.buildSpan("Get All Notes");
         return noteRepository.findAll();
     }
 

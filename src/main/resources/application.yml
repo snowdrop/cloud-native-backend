@@ -36,3 +36,8 @@ spring:
     password: ${db.password}
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+#jaeger:
+#  protocol: HTTP
+#  sender: http://jaeger-collector-jaeger.ocp.spring-boot.osepool.centralci.eng.rdu2.redhat.com/api/traces
+#  protocol: 0
