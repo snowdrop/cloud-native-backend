@@ -40,4 +40,4 @@ spring:
 jaeger:
   protocol: HTTP
   sender: http://jaeger-collector-jaeger.ocp.spring-boot.osepool.centralci.eng.rdu2.redhat.com/api/traces
-  protocol: 0
+  port: 0

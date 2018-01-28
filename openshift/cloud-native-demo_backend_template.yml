@@ -127,6 +127,7 @@ objects:
         from:
           kind: ImageStreamTag
           name: runtime:latest
+        incremental: true
       type: Source
 - apiVersion: v1
   kind: ImageStream
