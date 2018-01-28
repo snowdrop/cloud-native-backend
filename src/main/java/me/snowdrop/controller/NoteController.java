@@ -22,7 +22,6 @@ public class NoteController {
     NoteRepository noteRepository;
 
     @Autowired
-    @Qualifier("app-tracer")
     private Tracer tracer;
 
     @GetMapping("/notes")
