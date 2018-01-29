@@ -39,5 +39,5 @@ spring:
 
 jaeger:
   protocol: HTTP
-  sender: http://jaeger-collector-jaeger.ocp.spring-boot.osepool.centralci.eng.rdu2.redhat.com/api/traces
+  sender: ${jaeger.url}
   port: 0
