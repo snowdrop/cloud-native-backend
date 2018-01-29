@@ -1,3 +1,11 @@
+# Default setting that are applied no matter what profile is used
+# If a profile defines the same property, then the value from the profile is used
+# That means that these have the lowest priority and properties defined in profiles
+# have higher priorities
+jaeger:
+  protocol: HTTP
+  sender: http://jaeger-collector-demo-cloud-native.192.168.42.13.nip.io/api/traces
+  port: 0
 ---
 spring:
   jpa:
@@ -38,6 +46,4 @@ spring:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
 jaeger:
-  protocol: HTTP
   sender: http://jaeger-collector-jaeger.ocp.spring-boot.osepool.centralci.eng.rdu2.redhat.com/api/traces
-  port: 0
