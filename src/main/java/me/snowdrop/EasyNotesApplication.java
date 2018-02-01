@@ -36,7 +36,7 @@ public class EasyNotesApplication {
 	@Bean
 	public Tracer JaegerTracer() {
 		Sender sender;
-		if (JAEGER_PROTOCOL.equals("HTTP")) {
+		if (JAEGER_PROTOCOL.equalsIgnoreCase("http")) {
 			LOG.info(">>> Jaeger Tracer calling the collector using a Http sender !");
 			sender = new HttpSender(JAEGER_URL);
 		} else {
