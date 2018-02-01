@@ -1,7 +1,7 @@
 ---
 jaeger:
   protocol: HTTP
-  sender: http://test.com
+  sender: ${jaeger.url:#{null}}
   port: 0
 
 spring:

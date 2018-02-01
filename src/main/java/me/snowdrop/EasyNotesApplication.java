@@ -6,6 +6,7 @@ import com.uber.jaeger.senders.HttpSender;
 import com.uber.jaeger.senders.Sender;
 import com.uber.jaeger.senders.UdpSender;
 import io.opentracing.Tracer;
+import io.opentracing.noop.NoopTracerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,6 +36,10 @@ public class EasyNotesApplication {
 
 	@Bean
 	public Tracer JaegerTracer() {
+        if (JAEGER_URL == null) {
+            return NoopTracerFactory.create();
+        }
+
 		Sender sender;
 		if (JAEGER_PROTOCOL.equalsIgnoreCase("http")) {
 			LOG.info(">>> Jaeger Tracer calling the collector using a Http sender !");
