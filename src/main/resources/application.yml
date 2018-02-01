@@ -1,4 +1,9 @@
 ---
+jaeger:
+  protocol: HTTP
+  sender: http://test.com
+  port: 0
+
 spring:
   jpa:
     hibernate.ddl-auto: update
@@ -37,7 +42,4 @@ spring:
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
-jaeger:
-  protocol: HTTP
-  sender: ${jaeger.url}
-  port: 0
+
