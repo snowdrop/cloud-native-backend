@@ -1,4 +1,4 @@
-package me.snowdrop.model;
+package me.snowdrop.app.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotBlank;

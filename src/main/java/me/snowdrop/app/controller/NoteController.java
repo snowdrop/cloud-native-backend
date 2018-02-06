@@ -1,10 +1,9 @@
-package me.snowdrop.controller;
+package me.snowdrop.app.controller;
 
 import io.opentracing.Tracer;
-import me.snowdrop.model.Note;
-import me.snowdrop.repository.NoteRepository;
+import me.snowdrop.app.model.Note;
+import me.snowdrop.app.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

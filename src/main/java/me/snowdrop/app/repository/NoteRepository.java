@@ -1,6 +1,6 @@
-package me.snowdrop.repository;
+package me.snowdrop.app.repository;
 
-import me.snowdrop.model.Note;
+import me.snowdrop.app.model.Note;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
