@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by rajeevkumarsingh on 27/06/17.
+ * Created by Spring Boot Team.
  */
 @Entity
 @Table(name = "notes")
