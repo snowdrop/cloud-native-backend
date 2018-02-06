@@ -22,6 +22,10 @@ spec:
               fieldPath: metadata.namespace
         - name: OPENTRACING_JAEGER_HTTPSENDER_URL
           value: http://jaeger-collector.tracing.svc:14268/api/traces
+        - name: OPENTRACING_JAEGER_LOGSPANS
+          value: true
+        - name: OPENTRACING_JAEGER_ENABLED
+          value: true
         - name: SPRING_PROFILES_ACTIVE
           value: openshift
         image: spring-boot-db-notes:1.0.0
