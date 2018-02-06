@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: spring-boot-db-notes
+spec:
+  replicas: 1
+  selector:
+    app: spring-boot-db-notes
+    provider: fabric8
+    group: me.snowdrop
+  strategy:
+    rollingParams:
+      timeoutSeconds: 3600
+    type: Rolling
+  template:
+    spec:
+      containers:
+      - env:
+        - name: KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: OPENTRACING_JAEGER_HTTPSENDER_URL
+          value: http://jaeger-collector.tracing.svc:14268/api/traces
+        - name: SPRING_PROFILES_ACTIVE
+          value: openshift
+        image: spring-boot-db-notes:1.0.0
+        imagePullPolicy: IfNotPresent
+        name: spring-boot
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 8778
+          name: jolokia
+          protocol: TCP
+        securityContext:
+          privileged: false
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - spring-boot
+      from:
+        kind: ImageStreamTag
+        name: spring-boot-db-notes:1.0.0
+    type: ImageChange
+

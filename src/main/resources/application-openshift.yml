@@ -1,0 +1,22 @@
+---
+jaeger:
+  protocol: HTTP
+  sender: ${jaeger.url:#{null}}
+  port: 0
+
+spring:
+  jpa:
+    hibernate.ddl-auto: update
+    show_sql: false
+---
+# Profile used when app deployed on OpenShift
+spring.profiles: openshift
+spring:
+  datasource:
+    url: jdbc:mysql://${db.host}:3306/${db.name}
+    username: ${db.user}
+    password: ${db.password}
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+

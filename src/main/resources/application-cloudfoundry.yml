@@ -1,0 +1,22 @@
+---
+jaeger:
+  protocol: HTTP
+  sender: ${jaeger.url:#{null}}
+  port: 0
+
+spring:
+  jpa:
+    hibernate.ddl-auto: update
+    show_sql: false
+---
+# Profile used when app deployed on Cloudfoundry
+spring.profiles: cloudfoundry
+spring:
+  datasource:
+    url: ${vcap.services.cleardb.credentials.jdbcUrl}
+    username: ${vcap.services.cleardb.credentials.username}
+    password: ${vcap.services.cleardb.credentials.password}
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+
