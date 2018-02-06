@@ -11,11 +11,15 @@ parameters:
   displayName: Copy Args
   value: '*-exec.jar'
   required: true
-- name: JAEGER_URL
-  description: URL address of the Jaeger Collector
+- name: OPENTRACING_JAEGER_SENDER_URL
+  description: URL address of the Jaeger HTTP Sender
   displayName: Jaeger URL
-  value: 'http://jaeger-collector.tracing:14268/api/traces'
+  value: 'http://jaeger-collector.tracing.svc:14268/api/traces'
   required: true
+- name: OPENTRACING_JAEGER_LOG_SPANS
+  description: Enable logging of spans
+  displayName: Jaeger Log
+  value: false
 # Objects defined for the template
 objects:
 - apiVersion: v1
@@ -81,8 +85,10 @@ objects:
               fieldRef:
                 apiVersion: v1
                 fieldPath: metadata.namespace
-          - name: JAEGER_URL
-            value: ${JAEGER_URL}
+          - name: OPENTRACING_JAEGER_HTTP_SENDER_URL
+            value: ${OPENTRACING_JAEGER_HTTP_SENDER_URL}
+          - name: OPENTRACING_JAEGER_LOG_SPANS
+            value: ${OPENTRACING_JAEGER_LOG_SPANS}
           - name: SPRING_PROFILES_ACTIVE
             value: openshift
           image: spring-boot-db-notes:latest
