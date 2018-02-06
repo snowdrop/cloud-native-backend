@@ -19,18 +19,6 @@
 		<maven.spring-boot.plugin.version>1.5.10.RELEASE</maven.spring-boot.plugin.version>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>me.snowdrop</groupId>
-				<artifactId>spring-boot-bom</artifactId>
-				<version>${spring-boot.bom.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
