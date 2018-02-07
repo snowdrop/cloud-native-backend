@@ -26,6 +26,8 @@ spec:
           value: true
         - name: OPENTRACING_JAEGER_ENABLED
           value: true
+        - name: OPENTRACING_JAEGER_SERVICE_NAME
+          value: cloud-native-backend
         - name: SPRING_PROFILES_ACTIVE
           value: openshift
         image: spring-boot-db-notes:1.0.0

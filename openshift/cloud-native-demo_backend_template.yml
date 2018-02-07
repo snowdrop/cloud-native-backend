@@ -20,6 +20,10 @@ parameters:
   description: Enable logging of spans
   displayName: Jaeger Log
   value: false
+- name: OPENTRACING_JAEGER_SERVICE_NAME
+  description: The name of the service as it will show up in Jaeger
+  displayName: Jaeger Service Name
+  value:
 # Objects defined for the template
 objects:
 - apiVersion: v1
@@ -89,6 +93,8 @@ objects:
             value: ${OPENTRACING_JAEGER_HTTP_SENDER_URL}
           - name: OPENTRACING_JAEGER_LOG_SPANS
             value: ${OPENTRACING_JAEGER_LOG_SPANS}
+          - name: OPENTRACING_JAEGER_SERVICE_NAME
+            value: ${OPENTRACING_JAEGER_SERVICE_NAME}
           - name: SPRING_PROFILES_ACTIVE
             value: openshift
           image: spring-boot-db-notes:latest
