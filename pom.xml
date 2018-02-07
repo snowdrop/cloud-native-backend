@@ -110,4 +110,12 @@
 		</profile>
 	</profiles>
 
+    <repositories>
+        <repository>
+            <id>jboss-snapshots-repository</id>
+            <name>JBoss Snapshots Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
 </project>
