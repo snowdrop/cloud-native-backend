@@ -15,7 +15,6 @@
 	<name>Cloud Native Dvlpt :: Spring Boot Backend JPA</name>
 
 	<properties>
-		<spring-boot.bom.version>1.5.10.Beta1</spring-boot.bom.version>
 		<maven.spring-boot.plugin.version>1.5.10.RELEASE</maven.spring-boot.plugin.version>
 	</properties>
 
