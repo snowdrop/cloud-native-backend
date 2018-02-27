@@ -1,3 +1,8 @@
+import org.csanchez.jenkins.plugins.kubernetes.*
+import jenkins.model.*
+
+def j = Jenkins.getInstance()
+
 podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', serviceAccount: 'jenkins', containers: [
     containerTemplate(name: 'jnlp',
         image: 'openshift/jenkins-slave-maven-centos7',
