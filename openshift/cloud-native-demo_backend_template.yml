@@ -19,7 +19,7 @@ parameters:
 - name: OPENTRACING_JAEGER_LOG_SPANS
   description: Enable logging of spans
   displayName: Jaeger Log
-  value: false
+  value: 'false'
 - name: OPENTRACING_JAEGER_SERVICE_NAME
   description: The name of the service as it will show up in Jaeger
   displayName: Jaeger Service Name
