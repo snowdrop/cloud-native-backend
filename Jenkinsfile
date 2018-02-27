@@ -1,4 +1,4 @@
-podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', jenkinsUrl: 'https://jenkins.infra.svc/', serviceAccount: 'jenkins', containers: [
+podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', serviceAccount: 'jenkins', containers: [
     containerTemplate(name: 'jnlp',
         image: 'openshift/jenkins-slave-maven-centos7',
         workingDir: '/tmp',
