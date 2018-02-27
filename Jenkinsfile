@@ -1,5 +1,5 @@
 podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', serviceAccount: 'jenkins', containers: [
-    containerTemplate(name: 'jnlp',
+    containerTemplate(name: 'my-jnlp',
         image: 'openshift/jenkins-slave-maven-centos7',
         workingDir: '/tmp',
         envVars: [
