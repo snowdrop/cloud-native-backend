@@ -3,7 +3,7 @@ podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', serviceAccoun
         image: 'openshift/jenkins-slave-maven-centos7',
         workingDir: '/tmp',
         envVars: [
-            envVar(key: 'MAVEN_MIRROR_URL',value: 'http://nexus-myproject.192.168.64.91.nip.io/nexus/content/groups/public/')
+            envVar(key: 'MAVEN_MIRROR_URL',value: 'http://nexus-infra.46.4.81.220.nip.io/nexus/content/groups/public/')
         ],
         cmd: '',
         args: '${computer.jnlpmac} ${computer.name}')
