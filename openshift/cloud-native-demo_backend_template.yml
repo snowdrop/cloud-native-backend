@@ -90,7 +90,7 @@ objects:
                 apiVersion: v1
                 fieldPath: metadata.namespace
           - name: OPENTRACING_JAEGER_HTTP_SENDER_URL
-            value: ${OPENTRACING_JAEGER_HTTP_SENDER_URL}
+            value: ${OPENTRACING_JAEGER_SENDER_URL}
           - name: OPENTRACING_JAEGER_LOG_SPANS
             value: ${OPENTRACING_JAEGER_LOG_SPANS}
           - name: OPENTRACING_JAEGER_SERVICE_NAME
