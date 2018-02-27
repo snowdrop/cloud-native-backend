@@ -38,13 +38,13 @@ pipeline {
       }
     }
   }
-  stages {
-    stage('Run maven') {
-      steps {
-        container('maven33') {
-          sh "mvn  -Popenshift -DskipTests clean fabric8:deploy"
-        }
-      }
+  node("maven33") {
+    checkout scm
+    stage("Test") {
+      sh "mvn test"
+    }
+    stage("Deploy") {
+      sh "mvn  -Popenshift -DskipTests clean fabric8:deploy"
     }
   }
 }
