@@ -9,8 +9,8 @@ podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', serviceAccoun
         args: '${computer.jnlpmac} ${computer.name}')
 ]){
   node("maven33") {
-    // checkout scm
-    git url: 'https://github.com/snowdrop/cloud-native-backend.git'
+    checkout scm
+    // git url: 'https://github.com/snowdrop/cloud-native-backend.git'
     stage("Test") {
       sh "mvn test"
     }
