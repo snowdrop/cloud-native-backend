@@ -29,7 +29,7 @@ pipeline {
       serviceAccount 'jenkins'
       jenkinsUrl 'http://jenkins.infra.svc'
       containerTemplate {
-        name 'maven'
+        name 'jnlp'
         image 'openshift/jenkins-slave-maven-centos7'
         workingDir '/tmp'
         envVars [ containerEnvVar(key: 'MAVEN_MIRROR_URL',value: 'http://nexus.infra.svc:8081/nexus/content/groups/public/') ]
