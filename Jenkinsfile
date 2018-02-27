@@ -23,21 +23,26 @@
 pipeline {
   agent {
     kubernetes {
-      //cloud 'kubernetes'
-      label 'mypod'
+      name 'maven33'
+      label 'maven33'
+      cloud 'openshift'
+      serviceAccount 'jenkins'
+      jenkinsUrl 'http://jenkins.infra.svc'
       containerTemplate {
         name 'maven'
-        image 'maven:3.3.9-jdk-8-alpine'
-        ttyEnabled true
-        command 'cat'
+        image 'openshift/jenkins-slave-maven-centos7'
+        workingDir '/tmp'
+        envVars [ containerEnvVar(key: 'MAVEN_MIRROR_URL',value: 'http://nexus.infra.svc:8081/nexus/content/groups/public/') ]
+        command ''
+        args '${computer.jnlpmac} ${computer.name}'
       }
     }
   }
   stages {
     stage('Run maven') {
       steps {
-        container('maven') {
-          sh 'mvn -version'
+        container('maven33') {
+          sh "mvn  -Popenshift -DskipTests clean fabric8:deploy"
         }
       }
     }
