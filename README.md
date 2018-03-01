@@ -111,13 +111,13 @@ oc create -f openshift/mysql-secret_servicebinding.yml
 7. Mount the secret within the Deploymentconfig
 
 ```bash
-oc env --from=secret/spring-boot-notes-mysql-binding dc/spring-boot-db-notes
+oc env --from=secret/spring-boot-notes-mysql-binding dc/cloud-native-backend
 ```
 
 8. Wait till the pod is recreated and then test the service
 
 ```bash
-export HOST=$(oc get route/spring-boot-db-notes -o jsonpath='{.spec.host}')
+export HOST=$(oc get route/cloud-native-backend -o jsonpath='{.spec.host}')
 curl -k $HOST/api/notes 
 curl -k -H "Content-Type: application/json" -X POST -d '{"title":"My first note","content":"Spring Boot is awesome!"}' $HOST/api/notes 
 curl -k $HOST/api/notes/1

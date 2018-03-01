@@ -9,7 +9,7 @@
 	</parent>
 
 	<groupId>me.snowdrop</groupId>
-	<artifactId>spring-boot-db-notes</artifactId>
+	<artifactId>cloud-native-backend</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<name>Cloud Native Dvlpt :: Spring Boot Backend JPA</name>
