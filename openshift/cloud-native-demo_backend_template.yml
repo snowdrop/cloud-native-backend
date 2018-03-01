@@ -145,7 +145,7 @@ objects:
           value: ${ARTIFACT_COPY_ARGS}
         from:
           kind: ImageStreamTag
-          name: runtime:latest
+          name: backend-runtime:latest
         incremental: true
       type: Source
 - apiVersion: v1
@@ -156,7 +156,7 @@ objects:
 - apiVersion: v1
   kind: ImageStream
   metadata:
-    name: runtime
+    name: backend-runtime
   spec:
     tags:
     - name: latest
