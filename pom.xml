@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>me.snowdrop</groupId>
 			<artifactId>opentracing-tracer-jaeger-spring-web-starter</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.1</version>
 		</dependency>
 
 		<!-- Database -->
@@ -108,13 +108,5 @@
 			</build>
 		</profile>
 	</profiles>
-
-    <repositories>
-        <repository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
 
 </project>
