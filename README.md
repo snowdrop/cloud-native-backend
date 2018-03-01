@@ -30,10 +30,10 @@ The app will start running at <http://localhost:8080>.
 The app defines following CRUD APIs.
 
     GET /api/notes
+        
+    GET /api/notes/{noteId}
     
     POST /api/notes
-    
-    GET /api/notes/{noteId}
     
     PUT /api/notes/{noteId}
     
