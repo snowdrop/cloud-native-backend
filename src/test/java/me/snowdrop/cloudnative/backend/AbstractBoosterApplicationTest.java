@@ -21,7 +21,6 @@ public abstract class AbstractBoosterApplicationTest {
                 .body(is("[]"));
     }
 
-
     @Test
     public void testGetOneNote() {
         Note cherry = new Note();
