@@ -1,9 +1,4 @@
 ---
-jaeger:
-  protocol: HTTP
-  sender: ${jaeger.url:#{null}}
-  port: 0
-
 spring:
   jpa:
     hibernate.ddl-auto: update
