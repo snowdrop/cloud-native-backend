@@ -11,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 public abstract class AbstractBoosterApplicationTest {
 
     @Autowired
-    protected NoteRepository noteRepository;
+    public NoteRepository noteRepository;
 
     @Test
     public void testGetEmptyArray() {
