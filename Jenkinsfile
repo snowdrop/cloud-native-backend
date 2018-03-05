@@ -14,6 +14,11 @@ podTemplate(name: 'maven33', label: 'maven33', cloud: 'openshift', serviceAccoun
     stage("Test") {
       sh "mvn test"
     }
+
+    stage("Use appropriate namespace") {
+        sh "oc project ${OPENSHIFT_NAMESPACE}"
+    }
+
     stage("Deploy") {
       sh "mvn  -Popenshift -DskipTests clean fabric8:deploy"
     }
