@@ -27,7 +27,7 @@ spec:
         - name: OPENTRACING_JAEGER_ENABLED
           value: true
         - name: OPENTRACING_JAEGER_SERVICE_NAME
-          value: cloud-native-backend
+          value: cloud-native-backend-changeme
         - name: SPRING_PROFILES_ACTIVE
           value: openshift
         image: cloud-native-backend:1.0.0
