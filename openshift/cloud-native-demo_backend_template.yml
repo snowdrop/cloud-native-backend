@@ -143,6 +143,8 @@ objects:
         env:
         - name: ARTIFACT_COPY_ARGS
           value: ${ARTIFACT_COPY_ARGS}
+        - name: "MAVEN_MIRROR_URL"
+          value: "http://nexus.infra.svc:8081/nexus/content/groups/public/"
         from:
           kind: ImageStreamTag
           name: backend-runtime:latest
