@@ -22,7 +22,7 @@ import static org.hamcrest.Matchers.isEmptyString;
 public class OpenShiftIT  {
 
     @AwaitRoute(path = "/health")
-    @RouteURL("${app.name}")
+    @RouteURL("cloud-native-backend")
     private URL baseURL;
 
     @Before
