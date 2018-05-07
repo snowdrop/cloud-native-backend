@@ -21,7 +21,7 @@ spec:
             fieldRef:
               fieldPath: metadata.namespace
         - name: OPENTRACING_JAEGER_HTTP_SENDER_URL
-          value: http://jaeger-collector.tracing.svc:14268/api/traces
+          value: http://jaeger-collector.infra.svc:14268/api/traces
         - name: OPENTRACING_JAEGER_LOG_SPANS
           value: true
         - name: OPENTRACING_JAEGER_ENABLED
