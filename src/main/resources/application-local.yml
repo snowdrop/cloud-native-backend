@@ -1,5 +1,7 @@
 ---
 spring:
+  application:
+    name: cloud-native-backend
   jpa:
     hibernate.ddl-auto: update
     show_sql: false
